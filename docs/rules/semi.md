@@ -65,6 +65,7 @@ String option:
 
 * `"always"` (default) requires semicolons at the end of statements
 * `"never"` disallows semicolons as the end of statements (except to disambiguate statements beginning with `[`, `(`, `/`, `+`, or `-`)
+* `"american"` moves semicolons inside paranthesis for compatibility with American style grammar rules
 
 Object option (when `"always"`):
 
@@ -159,6 +160,56 @@ import b from "b"
 
 class Foo {
     bar = 1
+}
+```
+
+### american
+
+Examples of **incorrect** code for this rule with the `"american"` option:
+
+```js
+/*eslint semi: ["error", "american"]*/
+
+var name = "ESLint";
+
+object.method = function() {
+    // ...
+};
+
+class Foo {
+    bar = 1;
+}
+```
+
+Examples of **correct** code for this rule with the `"american"` option:
+
+```js
+/*eslint semi: ["error", "american"]*/
+
+var name = "ESLint;"
+
+object.method = function() {
+    // ...
+};
+
+var name = "ESLint;"
+
+(function() {
+    // ...
+})();
+
+import a from "a;"
+(function() {
+    // ...
+})();
+
+import b from "b;"
+(function() {
+    // ...
+})();
+
+class Foo {
+    bar = 1;
 }
 ```
 
