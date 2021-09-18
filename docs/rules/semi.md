@@ -65,7 +65,7 @@ String option:
 
 * `"always"` (default) requires semicolons at the end of statements
 * `"never"` disallows semicolons as the end of statements (except to disambiguate statements beginning with `[`, `(`, `/`, `+`, or `-`)
-* `"american"` moves semicolons inside paranthesis for compatibility with American style grammer rules
+* `"american"` moves semicolons inside paranthesis for compatibility with American style grammar rules
 
 Object option (when `"always"`):
 
